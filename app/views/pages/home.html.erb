@@ -1,2 +1,15 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="container banner">
+  <h1>Momma's Gluten Free Bakes</h1>
+  <p>Your home for gluten-free goodies</p>
+</div>
+
+<div class="container">
+  <div class="row">
+    <% @menu_items.each do |item| %>
+      <div class="col-md-4">
+        <p><%= item.name %></p>
+        <p><%= item.description %></p>
+      </div>
+    <% end %>
+  </div>
+</div>
