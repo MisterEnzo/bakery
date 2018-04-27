@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="row">
+    <h1>Orders:</h1>
+    <% @orders.each do |order| %>
+      <div>
+          <h4>Order# <%= order.id %></h4>
+          <p>Status: <%= order.state %></p>
+          <p>Item: <%= order.menu_item_sku %></p>
+          <p>Amount: <%= humanized_money_with_symbol(order.amount) %></p>
+        <hr>
+      </div>
+    <% end %>
+  </div>
+</div>
