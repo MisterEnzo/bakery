@@ -7,17 +7,25 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 puts "Creating Menu Items"
-MenuItem.create(name: "Chocolate Chip Cookies",
+MenuItem.create(
+                sku: "chocchip",
+                name: "Chocolate Chip Cookies",
                 description: "A dozen of heavenly crunchy on the outside
                              and chewy on inside goodness. Gluten-Free",
-                price: 600)
+                price_cents: 60000,
+                photo_url: 'chocolate-chip.jpg'
+                )
 MenuItem.create(name: "Deep Chocolate Brownies",
                 description: "Twenty squares of fudgy brownies made of
                               premium dark chocolate. Gluten-Free",
-                price: 500)
+                price_cents: 50000,
+                photo_url: 'fudge-brownies.jpg'
+                )
 MenuItem.create(name: "New York Style Cheesecake",
                 description: "A classic, made from premium cream cheese and a
                              crumble crust. Our best-seller. Gluten-free",
-                price: 600)
+                price_cents: 60000,
+                photo_url: 'cheesecake.jpg'
+                )
 
 puts "Done seeding"
