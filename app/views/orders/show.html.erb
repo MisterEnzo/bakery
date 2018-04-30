@@ -1,6 +1,7 @@
 <h1>Order</h1>
 <ul>
   <li>Status: <%= @order.state %></li>
-  <li>Item: <%= @order.menu_item_sku %></li>
+  <li>Order ID: <%= @order.id %></li>
+  <li>Order Contents: <%= "contents" %></li>
   <li>Amount: <%= humanized_money_with_symbol(@order.amount) %></li>
 <ul>

@@ -8,24 +8,34 @@
 
 puts "Creating Menu Items"
 MenuItem.create(
-                sku: "chocchip",
+                sku: "cccookies",
                 name: "Chocolate Chip Cookies",
                 description: "A dozen of heavenly crunchy on the outside
                              and chewy on inside goodness. Gluten-Free",
                 price_cents: 60000,
                 photo_url: 'chocolate-chip.jpg'
                 )
-MenuItem.create(name: "Deep Chocolate Brownies",
+MenuItem.create(
+                sku: "brownies",
+                name: "Deep Chocolate Brownies",
                 description: "Twenty squares of fudgy brownies made of
                               premium dark chocolate. Gluten-Free",
                 price_cents: 50000,
                 photo_url: 'fudge-brownies.jpg'
                 )
-MenuItem.create(name: "New York Style Cheesecake",
+MenuItem.create(
+                sku: "cheesecake",
+                name: "New York Style Cheesecake",
                 description: "A classic, made from premium cream cheese and a
                              crumble crust. Our best-seller. Gluten-free",
                 price_cents: 60000,
                 photo_url: 'cheesecake.jpg'
                 )
+
+puts "Creating User"
+User.create!(
+             email: "user@example.org",
+             password: "123456"
+             )
 
 puts "Done seeding"

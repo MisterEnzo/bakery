@@ -12,12 +12,11 @@
         <p><%= item.description %></p>
         <p><%= humanized_money_with_symbol(item.price) %></p>
 
-        <%= form_tag orders_path do %>
-        <%= hidden_field_tag 'menu_item_id', item.id %>
-        <%= submit_tag 'Purchase', class: 'btn btn-primary' %>
-        <% end %>
       </div>
     <% end %>
-
+    <%= form_tag orders_path do %>
+    <%#= hidden_field_tag 'menu_item_id', item.id %>
+    <%= submit_tag 'Place an Order', class: 'btn btn-primary' %>
+    <% end %>
   </div>
 </div>

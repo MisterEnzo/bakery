@@ -9,9 +9,7 @@ class OrdersController < ApplicationController
   end
 
   def create
-    menu_item = MenuItem.find(params[:menu_item_id])
-    order = Order.create!(menu_item_sku: menu_item.sku, amount: menu_item.price, state: 'pending', user: current_user)
-
-    redirect_to new_order_payment_path(order)
+    @order = Order.create(user: current_user, state: 'pending')
+    redirect_to new_order_order_detail_path(@order)
   end
 end
