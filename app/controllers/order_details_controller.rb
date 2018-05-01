@@ -2,9 +2,11 @@ class OrderDetailsController < ApplicationController
   before_action :set_order, only: [ :new, :create ]
 
   def new
+    authorize @order
   end
 
   def create
+    authorize @order
     cookies = params[:details][:cookies_q].to_i
     brownies = params[:details][:brownies_q].to_i
     cakes = params[:details][:cakes_q].to_i
@@ -26,7 +28,6 @@ class OrderDetailsController < ApplicationController
     end
     @order.update_attribute(:amount_cents, total)
     redirect_to new_order_payment_path(@order)
-    # redirect_to new_order_payment_path(order)
 
   end
 
