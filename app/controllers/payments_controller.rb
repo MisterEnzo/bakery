@@ -2,9 +2,11 @@ class PaymentsController < ApplicationController
   before_action :set_order
 
   def new
+    authorize @order
   end
 
   def create
+    authorize @order
     customer = Stripe::Customer.create(
     source: params[:stripeToken],
     email:  params[:stripeEmail]
