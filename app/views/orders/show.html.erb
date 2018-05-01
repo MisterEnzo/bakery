@@ -1,7 +1,7 @@
 <h1>Order</h1>
 <ul>
-  <li>Status: <%= @order.state %></li>
   <li>Order ID: <%= @order.id %></li>
+  <li>Status: <%= @order.state %></li>
   <li>Order Contents:
     <% @order.order_details.each do |detail| %>
       <p><%= detail.quantity %> <%= detail.menu_item.name %></p>
