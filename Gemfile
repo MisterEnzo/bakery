@@ -11,6 +11,7 @@ gem 'redis'
 gem 'devise'
 gem 'money-rails'
 gem 'stripe'
+gem 'pundit'
 
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass', '~> 3.3'
