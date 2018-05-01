@@ -1,8 +1,11 @@
-<h1>Purchase of goodies</h1>
+<h1>Cart Contents</h1>
 <%= form_tag order_payments_path(@order) do %>
   <article>
     <label class="amount">
-      <span>Amount: <%= humanized_money_with_symbol(@order.amount) %></span>
+    <% @order.order_details.each do |detail| %>
+      <p><%= detail.quantity %> <%= detail.menu_item.name %>: <%= humanized_money_with_symbol(detail.sub_total) %></p>
+    <% end %>
+      <span>Total Bill: <%= humanized_money_with_symbol(@order.amount) %></span>
     </label>
   </article>
 
@@ -10,7 +13,7 @@
     data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
     data-name="Gluten Free Bakeshop"
     data-email="<%= current_user.email %>"
-    data-description="Contents <%#= @order.menu_item_sku %>"
+    data-description="Payment for <%= @order.id %>"
     data-amount="<%= @order.amount_cents %>"
     data-currency="<%= @order.amount.currency %>"></script>
 

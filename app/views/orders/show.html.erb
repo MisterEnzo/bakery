@@ -2,6 +2,10 @@
 <ul>
   <li>Status: <%= @order.state %></li>
   <li>Order ID: <%= @order.id %></li>
-  <li>Order Contents: <%= "contents" %></li>
+  <li>Order Contents:
+    <% @order.order_details.each do |detail| %>
+      <p><%= detail.quantity %> <%= detail.menu_item.name %></p>
+    <% end %>
+  </li>
   <li>Amount: <%= humanized_money_with_symbol(@order.amount) %></li>
 <ul>
