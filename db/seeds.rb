@@ -38,4 +38,11 @@ User.create!(
              password: "123456"
              )
 
+User.create!(
+             email: "admin@gfb.org",
+             password: "123456",
+             admin: true
+             )
+
+
 puts "Done seeding"
