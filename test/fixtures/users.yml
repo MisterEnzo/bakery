@@ -1,0 +1,8 @@
+admin_user:
+  email: admin@test.com
+  encrypted_password: <%= Devise::Encryptor.digest(User, "password") %>
+
+test_user:
+  email: test@test.com
+  encrypted_password: <%= Devise::Encryptor.digest(User, "password") %>
+
