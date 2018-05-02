@@ -1,4 +1,5 @@
 class OrdersController < ApplicationController
+  before_action :require_login
 
   def index
     @orders = policy_scope(Order).order(created_at: :desc)
@@ -14,4 +15,12 @@ class OrdersController < ApplicationController
     authorize @order
     redirect_to new_order_order_detail_path(@order)
   end
+
+  private
+
+    def require_login
+      unless current_user
+        redirect_to new_user_session_path
+      end
+    end
 end
