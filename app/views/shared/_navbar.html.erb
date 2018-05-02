@@ -7,6 +7,7 @@
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
     <%= link_to "About", about_path, class: 'navbar-wagon-item navbar-wagon-link' %>
+    <%= link_to 'Contact', contact_path, class: 'navbar-wagon-item navbar-wagon-link' %>
     <%= link_to 'Blog', posts_path, class: 'navbar-wagon-item navbar-wagon-link' %>
     <% if user_signed_in? %>
 
@@ -33,8 +34,9 @@
         </div>
       </div>
     <% else %>
-      <!-- Login link (when logged out) -->
+      <!-- Login link (when logged out) and Signup -->
       <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "Sign-up", new_user_registration_path, class: 'navbar-wagon-item navbar-wagon-link' %>
     <% end %>
   </div>
 
