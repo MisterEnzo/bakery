@@ -44,5 +44,22 @@ User.create!(
              admin: true
              )
 
+puts "Creating posts"
+Post.create!(
+  title: "Hello World!",
+  content: "Thank you for visiting our site!"
+  )
+Post.create!(
+  title: "Grand-opening on May 9, 2018",
+  content: "We will be having our grand opening soon! We hope to see you there! Free cookies for the first 50 customers!"
+  )
+Post.create!(
+  title: "All you can eat bakes!",
+  content: "For P500, you can eat all the bakes you want. Promo ends on July 5."
+  )
+Post.create!(
+  title: "Cooldown this summer! Free scoop of ice cream!",
+  content: "Drop by our store and get a free scoop of ice cream for every P500 worth of orders!"
+  )
 
 puts "Done seeding"
