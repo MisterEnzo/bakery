@@ -12,8 +12,7 @@
     <% if user_signed_in? %>
 
       <!-- Links when logged in -->
-      <%= link_to "Place an Order", "#", class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to "Orders", orders_path , class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "Orders", orders_path, method: :post , class: "navbar-wagon-item navbar-wagon-link" %>
 
       <!-- Avatar with dropdown menu -->
       <div class="navbar-wagon-item">
