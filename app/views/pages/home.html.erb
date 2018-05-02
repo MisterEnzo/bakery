@@ -1,13 +1,13 @@
 <div class="container banner">
-  <h1>Momma's Gluten Free Bakes</h1>
-  <p>Your home for gluten-free goodies</p>
+  <h1>Your home for gluten-free goodies</h1>
 </div>
 
 <div class="container">
   <div class="row">
+  <h2 class="menu">Menu</h2>
     <% @menu_items.each do |item| %>
       <div class="col-md-4">
-        <%= image_tag item.photo_url, height: 200 %>
+        <%= image_tag item.photo_url, height: 200, width: 300 %>
         <p><%= item.name %></p>
         <p><%= item.description %></p>
         <p><%= humanized_money_with_symbol(item.price) %></p>

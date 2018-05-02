@@ -1,7 +1,7 @@
 class PostPolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
-      scope
+      scope.all
     end
   end
 
@@ -23,6 +23,10 @@ class PostPolicy < ApplicationPolicy
 
   private
     def user_is_admin?
-      user.admin
+      if user
+        user.admin
+      else
+        false
+      end
     end
 end
