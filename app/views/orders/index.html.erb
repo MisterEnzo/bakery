@@ -2,15 +2,16 @@
   <div class="row">
     <h1>Orders:</h1>
     <% @orders.each do |order| %>
-      <div>
-          <h4>Order# <%= order.id %></h4>
+      <div class="order-description">
+          <h4><strong>Order# <%= order.id %></strong></h4>
           <p>Status: <%= order.state %></p>
+          <p>Placed on: <%= order.created_at.to_date %></p>
           <p>Contents:
             <% order.order_details.each do |detail| %>
-            <p class="content"><%= detail.quantity %> <%= detail.menu_item.name %></p>
+            <p class="order-content"><%= detail.quantity %> <%= detail.menu_item.name %></p>
             <% end %>
           </p>
-          <p>Amount: <%= humanized_money_with_symbol(order.amount) %></p>
+          <p>Total: <%= humanized_money_with_symbol(order.amount) %></p>
         <hr>
       </div>
     <% end %>

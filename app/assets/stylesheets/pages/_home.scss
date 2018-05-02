@@ -7,7 +7,7 @@
   background-position: center;
 }
 
-h1 {
+.tag-line {
   text-align: center;
   text-decoration: underline;
 }
@@ -31,4 +31,8 @@ h1 {
 .order {
   text-align: center;
   margin: 25px auto 40px;
+}
+
+.order-content {
+  margin-left: 10px;
 }
